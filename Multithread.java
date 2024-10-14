@@ -32,38 +32,32 @@
 //     }
 // }
 import java.io.*;
-import  java.util.*;
+import java.util.*;
 
 class Demo1 extends Thread {
     public void run() {
-        for(int i=0;i<4;i++){
-            try{
-                System.out.println("Class 1 is running pretty well.");
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Class 1 is running pretty well.");
+            try {
                 Thread.sleep(1000);
-                }catch(InterruptedException e){
-                    System.out.println("Exception caught in 4k xD");
-                    e.printStackTrace();
-                }
-                // System.out.println(i);
-
+            } catch (Exception e) {
             }
+
         }
     }
+}
 
 class Demo2 extends Thread {
     public void run() {
-        for(int i=0;i<4;i++){
-            try{
-                System.out.println("Class 2 is running pretty well.");
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Class 2 is running pretty well.");
+            try {
                 Thread.sleep(1000);
-                }catch(InterruptedException e){
-                    System.out.println("Exception caught in 4k xD");
-                    e.printStackTrace();
-                }
-                // System.out.println(i);
-
+            } catch (InterruptedException e) {
             }
+
         }
+    }
 }
 
 public class Multithread {
@@ -71,9 +65,7 @@ public class Multithread {
         int n = 4;
         Demo1 obj = new Demo1();
         Demo2 obj2 = new Demo2();
-        for (int i = 0; i < n; i++) {
-            obj.start();
-            obj2.start();
-        }
+        obj.start();
+        obj2.start();
     }
 }
